@@ -2,7 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import _ from 'lodash';
+import moment from 'moment'
+
+import Button from '@material-ui/core/Button';
+
+import MySlider from './MySlider'
+
 function App() {
+  const result = _.camelCase('__FOO_BAR__');
+  const time = moment().format('MMMM Do YYYY, h:mm:ss a');
   return (
     <div className="App">
       <header className="App-header">
@@ -16,9 +25,16 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {result}
+          {time}
         </a>
       </header>
+
+      <Button variant="contained" color="primary">
+      Hello World
+    </Button>
+
+    <MySlider/>
     </div>
   );
 }
